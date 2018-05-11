@@ -1,6 +1,6 @@
 <?php
 	if(isset($_POST['submit'])){
-		include_once('../config/dbcon.php');
+		include_once('../../config/dbcon.php');
 		
 		$nama = $_POST['nama'];
 		$jabatan = $_POST['jabatan'];
@@ -18,7 +18,7 @@
 			echo
 				"<script>
 					alert('data masih ada yang kosong');
-					location.href='../pages/signup.php';
+					location.href='../../pages/admin/homeAdmin2.php';
 				</script>";
 			exit();
 		}else{
@@ -30,7 +30,7 @@
 				echo
 					"<script>
 						alert('Username Sudah digunakan');
-						location.href='../pages/signup.php';
+						location.href='../../pages/admin/homeAdmin2.php';
 					</script>";
 				exit();
 			}else{
@@ -43,14 +43,14 @@
 				$insert = mysqli_query($conn, $sql);
 				
 				if($insert){
-					echo "<script> alert('Registrasi Berhasil');location.href='../index.php';</script>";
+					echo "<script> alert('Registrasi Berhasil');location.href='../../pages/admin/homeAdmin2.php';</script>";
 				}else{
-					echo "<script> alert('simpan data gagal');location.href='../pages/signup.php';</script>";
+					echo "<script> alert('simpan data gagal');location.href='../../pages/admin/homeAdmin2.php';</script>";
 				}
 			}
 		}
 	}else{
-		header("Location: ../pages/signup.php");
+		header("Location: ../../pages/admin/homeAdmin2.php");
 		exit();
 	}
 ?>
